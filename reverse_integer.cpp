@@ -3,31 +3,20 @@ using namespace std;
 class Solution {
 public:
     int reverse(int x) {
-        int revNum = 0;
-        int maxSize = 2;
-        for (int i = 0; i < 29; i++) {
-            maxSize *= 2;
-        }
-    
-        int len = 0, y = x;
-        while (y > 0) {
-            len++;
-            //cout << y << " " << x << endl;
-            y /= 10;
-        }
-        //cout << len;
-        //while (x > 0) {
-        for (int i = 0; i < (len); i++) {
-            cout << "x: " << x << "\t revNum: " << revNum << endl;
-            if ((x >= maxSize) || (x <= -maxSize)) return 0;
-            revNum = (revNum * 10) + (x % 10);
+        long revNum = 0;
+        // iterate through x at each decimal place
+        while (x != 0) {
+            // the current dig will be derived by taking x mod 10 because the value is between 0 and 9
+            int currDig = x % 10;
+            // divide it by 10 to iterate to the next decimal place
             x /= 10;
-            cout << "x: " << x << "\t revNum: " << revNum << endl;
+            // check if the reverse number * 10 will be greater than the max integer value or if it is above the max val
+            if (revNum > INT_MAX/10 || (revNum == INT_MAX/10 && currDig > 7)) return 0;
+            // same as everything in the last statement except for the negative max (min)
+            if (revNum < INT_MIN/10 || (revNum == INT_MIN/10 && currDig < -8)) return 0;
+            // append the current digit to the reversed number by adding a decimal place and adding it to the number
+            revNum = revNum*10 + currDig;
         }
-        if (x < 0) {
-            revNum *= -1;
-        }
-        cout << revNum;
         return revNum;
     }
 };
