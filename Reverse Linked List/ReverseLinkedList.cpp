@@ -24,14 +24,37 @@ public:
         */
         ListNode* revList = new ListNode; // new reversed list
         ListNode* counter = head;
+
         int count = 0;
         while (counter) {
             count++;
             counter = counter->next;
         }
+
         int max = count;
-        for (int i = 0; i < max; i++) {
-            
+        for (int j = 0; j < max; j++) {
+            for (int i = 0; i < count; i++) {
+                if (i == max) {
+                    revList->val = head->val;
+                    revList = revList->next;
+
+                }
+                else if (i == count) {
+                    revList->val = head->val;
+                    revList = revList->next;
+
+                }
+                head = head->next;
+                count--;
+            }
         }
+        counter = revList;
+        while (counter != nullptr) {
+            if (revList->val != nullptr) {
+            cout << revList->val << endl;
+            }
+            revList = revList->next;
+        }
+        return revList;
     }
 };
