@@ -45,7 +45,9 @@ public:
                     revList = revList->next;             // iterate to the next node
 
                 }
-                head = head->next;                       // continue iterating
+                if (head) {
+                    head = head->next;                   // continue iterating
+                }
             }
                 count--;                                 // decrement the node value to reverse the list
         }   
