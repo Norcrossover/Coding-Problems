@@ -30,6 +30,7 @@ public:
             count++;
             counter = counter->next;
         }
+        //cout << "count: " << count << endl;
 
         int max = count;
         for (int j = 0; j < max; j++) {
@@ -49,8 +50,8 @@ public:
             }
         }
         counter = revList;
-        while (counter != nullptr) {
-            if (revList->val != nullptr) {
+        while (counter->next != nullptr) {
+            if (revList != nullptr) {
             cout << revList->val << endl;
             }
             revList = revList->next;
