@@ -33,23 +33,23 @@ public:
         //cout << "count: " << count << endl;
 
         int max = count;
-        for (int j = 0; j < max; j++) {
-            for (int i = 0; i < count; i++) {
-                if (i == max) {
-                    revList->val = head->val;
-                    revList = revList->next;
+        for (int j = 0; j < max; j++) {                  // Iterate through the whole list
+            for (int i = 0; i < count; i++) {            // Iterate up till the count number to find the node
+                if (i == max) {                          // This may be redundant if count counts the max variablee
+                    revList->val = head->val;            // set the current node's val to the current head node's val
+                    revList = revList->next;             // iterate to the next node
 
                 }
-                else if (i == count) {
-                    revList->val = head->val;
-                    revList = revList->next;
+                else if (i == count) {                   // if i is count
+                    revList->val = head->val;            // set the value of head to the value of the current node in the reversed list
+                    revList = revList->next;             // iterate to the next node
 
                 }
-                head = head->next;
-                count--;
+                head = head->next;                       // continue iterating
             }
-        }
-        counter = revList;
+                count--;                                 // decrement the node value to reverse the list
+        }   
+        counter = revList;                               // temporary node to traverse and check if it worked
         while (counter->next != nullptr) {
             if (revList != nullptr) {
             cout << revList->val << endl;
