@@ -9,18 +9,18 @@ public:
         if (x < 0) x *= -1; // make x positive if it is negative
         int copy = x; 
         
-        while (x != 0) {
+         while (x) {
             cout << "x: " << x << endl;
             cout << "y: " << y << endl;
-            y = x % 10;
+            y += x % 10;
             x /= 10;
-            y *= 10;
+            if (x) y *= 10;
         }
-        /*
+        
         cout << "x: " << x << endl;
-        cout << "copy: " << copy << endl;
+        //cout << "copy: " << copy << endl;
         cout << "y: " << y << endl;
-        */
+        
         if (y < 0) y *= -1;
         if (copy == y) return true;
         return false;
