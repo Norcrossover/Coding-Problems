@@ -6,8 +6,8 @@ public:
         double min = 1/10000;
         
         if (n == 0) return 1;
-        else if (x == 1) return 1; 
         else if (n > 0) {
+            if (x == 1) return 1; 
             for (int i=1; i<n; i++) {
                 //cout << solution << endl;
                 if (solution > max || solution < min) return 0;
