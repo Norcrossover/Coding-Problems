@@ -3,10 +3,20 @@ public:
     vector<int> sortArrayByParityII(vector<int>& nums) {
         int len = nums.length();
         vector<int> arr;
+        // loop through arr
         for (int i = 0; i < len; i++) {
-            // if the number is even and count is even
-            if (nums[i] % 2 == 0 && i % 2 == 0) {
-                arr.push(nums[i]);
+            // loop through nums
+            for (int j = 0; j < len; j++) {
+                // if sorted list count is even
+                if (i % 2 == 0 && nums[i] % 2 == 0) {
+                    arr.push(nums[i]);
+                    nums[i].pop();
+                }
+                // else sorted list count is odd
+                else if (i % 2 == 1 && nums[i] % 2 == 1) {
+                    arr.push(nums[i]);
+                    nums[i].pop();
+                }
             }
         }
         return arr;
