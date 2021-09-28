@@ -1,0 +1,26 @@
+unsorted list: [4, 2, 5, 7]
+sorted list: [4, 5, 2, 7]
+
+1.
+pop the 4 off the list, since it was added
+unsorted list: [2, 5, 7]
+sorted list: [4]
+
+2. 
+search through for an uneven value and pop it and push it to the new list
+unsorted list: [2, 7]
+sorted list: [4, 5]
+
+3. 
+sorted list count is even, so search is for even
+search unsorted list for even number, pop it and push it to sorted list
+unsorted list: [7]
+sorted list: [4, 5, 2]
+
+4. 
+sorted list is now odd, so search is for odd
+search unsorted list for odd number, pop it and push it
+unsorted list: []
+sorted list: [4, 5, 2, 7]
+
+loop is over since looped through len
