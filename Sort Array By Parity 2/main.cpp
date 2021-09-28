@@ -1,5 +1,13 @@
 class Solution {
 public:
+    void removeElement(vector<int>& arr, int& elt) {
+        int len = arr.size();
+        for (int i = elt; i < len; i++) {
+            int temp = arr[i];
+            arr[i] = arr[i+1];
+            arr[i+1] = temp;
+        }
+    }
     vector<int> sortArrayByParityII(vector<int>& nums) {
         int len = nums.size();
         vector<int> arr;
