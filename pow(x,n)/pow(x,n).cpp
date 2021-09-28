@@ -27,6 +27,7 @@ public:
         }
         else if (n < 0) {
             //n *= -1;
+            if (x == 1) return 1;
             cout << "n < 0" << endl;
             solution = 1/x;
             for (int i = 1; i < -n; i++) {
