@@ -27,9 +27,11 @@ public:
         }
         else if (n < 0) {
             //n *= -1;
+            double check = n * -1.0;
             if (x == 1) return 1;
             cout << "n < 0" << endl;
             solution = 1/x;
+            if (check > max) return 0;
             for (int i = 1; i < -n; i++) {
                 if (solution < min) return 0;
                 solution /= x;
