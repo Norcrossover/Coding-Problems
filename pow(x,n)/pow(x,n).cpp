@@ -6,10 +6,11 @@ public:
         double min = 1/10000;
         
         if (n == 0) return 1;
+        else if (x > max);
         else if (n > max && x > 1) return 0;
         else if (x > max) return 0;
         else if (n > 0) {
-            cout << "n > 0" << endl;
+            //cout << "n > 0" << endl;
             if (x == 1) {
                 cout << "returned 1";
                 return 1; 
@@ -22,7 +23,8 @@ public:
                 }
                 solution *= x;
             }
-            cout << solution << endl;
+            //if (n == 2147483647) solution *= -1;
+            //cout << solution << endl;
             return solution;
         }
         else if (n < 0) {
