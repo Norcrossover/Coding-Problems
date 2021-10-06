@@ -1,0 +1,17 @@
+Function removeElement (currentVal, list) {
+    loop through list starting at currentVal
+        temp variable = list[i]
+        list[i] = list[i+1]
+        list[i+1] = temp variable
+}
+
+function removeDuplicates(vector nums) {
+    for the length of nums {
+        for the length of nums starting at i+1 {
+            if (nums[i] == nums[j]) {
+                removeElement(j, nums);
+            }
+        }
+    }
+    return nums.size();
+}
