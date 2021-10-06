@@ -3,6 +3,7 @@ Function removeElement (currentVal, list) {
         temp variable = list[i]
         list[i] = list[i+1]
         list[i+1] = temp variable
+    pop last element of list
 }
 
 function removeDuplicates(vector nums) {
